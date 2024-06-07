@@ -1,0 +1,50 @@
+<div class="product">
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="row">
+<div class="col-md-2">
+    <app-sidebar></app-sidebar>
+</div>
+<div class="col-md-6" >
+<h3 class="mt-5">Products</h3>
+<hr>
+<table class="table table-bordered table-striped mt-3 bg-light">
+    <thead class="table-primary">
+    <tr>
+        <th>Images</th>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Cost price</th>
+        <th>Sale Price</th>
+        <th>Count</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+<tbody>
+    <tr *ngFor="let p of product">
+         <td><img  [src]="getImageUrl(p.imagesUrl)" height="40px" width="40px"></td> 
+        <!-- <td >{{getImageUrl(p.imagesUrl)}}</td> -->
+        <!-- <td><img src="/assets/productImages/2984bbbd-9106-47a1-b269-05b396b24ec3.png"></td> -->
+        
+        <td>{{p.category?.name}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.costPrice}}</td>
+        <td>{{p.salePrice}}</td>
+        <td>{{p.noOfQuantity}}</td>
+        <td ><button class="btn btn-info" (click)="showUpdate(p.id)" >Edit</button>
+        <button class="btn btn-danger " style="margin-left: 8px;" (click)=" deleteProducts(p.id)" >Delete</button></td>
+    </tr>
+    
+    
+
+</tbody>
+</table>
+</div>
+<div class="col md-4">
+    <button class="btn btn-success m-5" (click)="addProduct()">+ Add Product</button>
+    <app-add-product *ngIf="show"></app-add-product>
+    <app-update-product *ngIf="editShow"></app-update-product>
+</div>
+</div>
+</div>
+</div>

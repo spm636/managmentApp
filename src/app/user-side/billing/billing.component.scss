@@ -1,0 +1,20 @@
+.quantity-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+.btn {
+    padding: 0.25rem 0.5rem; /* Adjust padding as needed */
+    border-radius: 0.5rem; /* Adjust border-radius as needed */
+}
+.remove-icon {
+    cursor: pointer;
+}
+
+.remove-icon i {
+    font-size: 1.5rem; /* Adjust icon size as needed */
+    color: red; /* Adjust icon color as needed */
+}
+.bill{
+    top: 6%;
+    background: rgb(241, 177, 177);
+}

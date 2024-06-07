@@ -1,0 +1,67 @@
+<div class="container-fluid m-2 bill">
+    <div class="col-md-12" class="categoryForm">
+      <h4>Billing</h4>
+      <hr>
+      <form [formGroup]="postForm">
+        <div class="m-2">
+          <input type="text" placeholder="Enter the customer name" formControlName="customerName" class="form-control">
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="m-2">
+              <input type="text" placeholder="Mobile Number" formControlName="mobile" class="form-control">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="m-2">
+              <input type="text" placeholder="Place" formControlName="place" class="form-control">
+            </div>
+          </div>
+        </div>
+  
+        <table class="table table-bordered table-striped mt-4 bg-light">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of products">
+              <td>
+                <img [src]="getImageUrl(p.product?.imagesUrl)" height="50px" width="50px" class="mt-2">
+                <span>{{p.product?.name}}</span>
+              </td>
+              <td>{{p.product?.salePrice}}</td>
+              <td>
+                <div class="quantity-container">
+                  <button class="btn  rounded-sm px-2" (click)="incriment(p.id)">+</button>
+                  <span>{{p.quanity}}</span>
+                  <button class="btn  rounded-sm px-2" (click)="decriment(p.id)">-</button>
+                </div>
+              </td>
+              <td>{{p.totel}}</td>
+              <td>
+                <span class="remove-icon" (click)="removeItem(p.id)">remove</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3">Grand Total</td>
+              <td colspan="2">{{Gtotel}}</td>
+            </tr>
+            <tr>
+              <td colspan="5" >
+                <button class="btn btn-primary ml-3" (click)="orderSave()" >Submit</button>
+                <button colspan="2" class="btn btn-danger ml-3" style="margin-left: 20px;" (click)="deleteAll()">Clear</button></td>
+             
+              
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+  

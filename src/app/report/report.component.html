@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-4" >
+            <h3 class="mt-5">Dowload Daily Report</h3>
+            <hr>
+            <form [formGroup]="postForm" >
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="mb-4">
+                            
+                            <input formControlName="localDate" class="form-control"  type="date"/>
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-4">
+
+                        <input (click)="report()" value="Download"  class="btn btn-primary"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

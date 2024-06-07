@@ -1,0 +1,35 @@
+<header id="header">
+    <nav class="navbar navbar-expand-sm navbar-dark  " style="background: #2d2d2e">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">
+                <span sec:authentication="principal.username"></span>
+
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav mr-auto" >
+                    <li class="nav-item">
+                        <a class="nav-link" href="" ></a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <a class="nav-link" href="">
+                <form action="#" th:action="@{/logout}" method="post">
+
+                    <button class="btn " type="submit" style="background:#2d2d2e;color: white">
+                        logout<i class="bi bi-box-arrow-left m-2"></i></button>
+                </form>
+            </a>
+
+        </div>
+    </nav>
+</header>
+<!-- <app-user-side-bar></app-user-side-bar> -->
+
